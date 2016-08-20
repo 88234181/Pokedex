@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="2dp"
+    android:background="@drawable/pokedex_list_selector"
+    android:paddingBottom="10dp"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/pokedexId"
+        android:text="001"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/pokedexType1" />
+
+    <LinearLayout
+        android:id="@+id/pokedexImageThumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/pokedex_image_bg"
+        android:layout_toEndOf="@+id/pokedexId"
+        android:layout_toRightOf="@+id/pokedexId"
+        android:layout_alignTop="@+id/pokedexId"
+        android:layout_alignBottom="@+id/pokedexId">
+
+        <ImageView
+            android:id="@+id/pokedexImage"
+            android:src="@drawable/pokedex001"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pokedexName"
+        android:text="name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_toEndOf="@+id/pokedexImageThumbnail"
+        android:layout_toRightOf="@+id/pokedexImageThumbnail"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/pokedexType1"
+        android:text="type1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pokedexName"
+        android:layout_alignStart="@+id/pokedexName"
+        android:layout_below="@+id/pokedexName"
+        android:layout_alignBottom="@+id/pokedexId"
+        />
+
+    <TextView
+        android:id="@+id/pokedexType2"
+        android:text="type2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/pokedexType1"
+        android:layout_toRightOf="@+id/pokedexType1"
+        android:layout_below="@+id/pokedexName"
+        android:layout_alignBottom="@+id/pokedexId"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"/>
+
+
+</RelativeLayout>

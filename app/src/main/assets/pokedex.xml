@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pokedex>
+    <pokemon>
+        <id>001</id>
+        <name>Bulbasaur</name>
+        <type1>Grass</type1>
+        <type2>Poison</type2>
+        <candyToEvolve>25</candyToEvolve>
+        <evolution>Ivysaur</evolution>
+        <attackmoves>
+            <move>
+                <name>Tackle</name>
+                <type>Normal</type>
+                <damage>12</damage>
+            </move>
+            <move>
+                <name>Vine Whip</name>
+                <type>Grass</type>
+                <damage>7</damage>
+            </move>
+        </attackmoves>
+        <specialmoves>
+            <move>
+                <name>Power Whip</name>
+                <type>Grass</type>
+                <damage>70</damage>
+                <bar>1</bar>
+            </move>
+            <move>
+                <name>Seed Bomb</name>
+                <type>Grass</type>
+                <damaage>40</damaage>
+                <bar>3</bar>
+            </move>
+            <move>
+                <name>Sludge Bomb</name>
+                <type>Poison</type>
+                <damaage>55</damaage>
+                <bar>2</bar>
+            </move>
+        </specialmoves>
+    </pokemon>
+</pokedex>
