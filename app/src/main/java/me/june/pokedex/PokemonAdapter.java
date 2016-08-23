@@ -1,5 +1,6 @@
 package me.june.pokedex;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,11 @@ import java.util.ArrayList;
 public class PokemonAdapter extends ArrayAdapter<Pokemon> {
 
     private static LayoutInflater inflater = null;
+    private Activity activity;
 
-    public PokemonAdapter(Context context, ArrayList<Pokemon> pokemons){
-        super(context, 0, pokemons);
+    public PokemonAdapter(Activity activity, ArrayList<Pokemon> pokemons){
+        super(activity, 0, pokemons);
+        this.activity = activity;
     }
 
     @Override
@@ -26,16 +29,18 @@ public class PokemonAdapter extends ArrayAdapter<Pokemon> {
         //Get the data item for this position
         Pokemon pokemon = getItem(position);
 
-        View view = convertView;
+        if(inflater == null){
+            inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
         if(convertView == null){
-            view = inflater.inflate(R.layout.pokedex_row, null);
+            convertView = inflater.inflate(R.layout.pokedex_row, null);
         }
 
-        TextView pokedexId = (TextView) view.findViewById(R.id.pokedexId);
-        ImageView pokedexImage = (ImageView) view.findViewById(R.id.pokedexImage);
-        TextView pokedexName = (TextView) view.findViewById(R.id.pokedexName);
-        TextView pokedexType1 = (TextView) view.findViewById(R.id.pokedexType1);
-        TextView pokedexType2 = (TextView) view.findViewById(R.id.pokedexType2);
+        TextView pokedexId = (TextView) convertView.findViewById(R.id.pokedexId);
+        ImageView pokedexImage = (ImageView) convertView.findViewById(R.id.pokedexImage);
+        TextView pokedexName = (TextView) convertView.findViewById(R.id.pokedexName);
+        TextView pokedexType1 = (TextView) convertView.findViewById(R.id.pokedexType1);
+        TextView pokedexType2 = (TextView) convertView.findViewById(R.id.pokedexType2);
 
         pokedexId.setText(pokemon.getId());
         pokedexImage.setImageResource(pokemon.getAssociateDrawable(Integer.parseInt(pokemon.getId())));
@@ -43,6 +48,6 @@ public class PokemonAdapter extends ArrayAdapter<Pokemon> {
         pokedexType1.setText(pokemon.getType1());
         pokedexType2.setText(pokemon.getType2());
 
-        return view;
+        return convertView;
     }
 }
