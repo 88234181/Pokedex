@@ -1,7 +1,10 @@
 package me.june.pokedex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.View;
+import android.widget.ListView;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -16,6 +19,11 @@ public class PokedexFragment extends ListFragment {
 
     private ArrayList<Pokemon> pokedex;
     private PokemonAdapter pokemonAdapter;
+
+    private static final String POKEMON_ID = "POKEMON ID";
+    private static final String POKEMON_NAME = "POKEMON NAME";
+    private static final String POKEMON_TYPE1 = "POKEMON TYPE1";
+    private static final String POKEMON_TYPE2 = "POKEMON TYPE2";
 
     public PokedexFragment(){
 
@@ -38,7 +46,6 @@ public class PokedexFragment extends ListFragment {
             String type1 = parser.getValue(e, "type1");
             String type2 = parser.getValue(e, "type2");
             String candyToEvolve = parser.getValue(e, "candyToEvolve");
-            System.out.println(id + name + type1 + type2 + candyToEvolve);
             Pokemon pokemon = new Pokemon(id, name, type1, type2, Integer.parseInt(candyToEvolve));
 
             pokedex.add(pokemon);
@@ -47,7 +54,22 @@ public class PokedexFragment extends ListFragment {
         pokemonAdapter = new PokemonAdapter(getActivity(), pokedex);
 
         setListAdapter(pokemonAdapter);
+    }
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        super.onListItemClick(l, v, position, id);
+
+        Pokemon pokemon = (Pokemon) getListAdapter().getItem(position);
+
+        Intent intent = new Intent(getActivity(), PokemonDetailActivity.class);
+
+        intent.putExtra(POKEMON_ID, pokemon.getId());
+        intent.putExtra(POKEMON_NAME, pokemon.getName());
+        intent.putExtra(POKEMON_TYPE1, pokemon.getType1());
+        intent.putExtra(POKEMON_TYPE2, pokemon.getType2());
+
+        startActivity(intent);
     }
 
 }

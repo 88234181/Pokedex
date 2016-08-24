@@ -84,7 +84,7 @@ public class Pokemon {
     }
 
     public static int getAssociateDrawable(int id){
-        return POKEMON_DRAWABLES[id];
+        return POKEMON_DRAWABLES[id-1];
     }
 
 }
