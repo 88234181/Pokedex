@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="2dp"
     android:background="@drawable/pokedex_list_selector"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:clickable="true">
 
     <!-- id -->
