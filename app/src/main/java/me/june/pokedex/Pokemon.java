@@ -11,6 +11,7 @@ public class Pokemon {
     private String type1;
     private String type2;
     private int candyToEvolve;
+    private String about;
     private ArrayList<Skills> possibleSkills;
 
     public Pokemon(String id, String name, String type1, String type2, int candyToEvolve){
@@ -70,6 +71,8 @@ public class Pokemon {
     public String getType2(){
         return type2;
     }
+
+    public String getAbout() { return about;}
 
     public int getCandyToEvolve(){
         return candyToEvolve;
