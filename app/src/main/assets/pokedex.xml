@@ -29,13 +29,13 @@
             <move>
                 <name>Seed Bomb</name>
                 <type>Grass</type>
-                <damaage>40</damaage>
+                <damage>40</damage>
                 <bar>3</bar>
             </move>
             <move>
                 <name>Sludge Bomb</name>
                 <type>Poison</type>
-                <damaage>55</damaage>
+                <damage>55</damage>
                 <bar>2</bar>
             </move>
         </specialmoves>
