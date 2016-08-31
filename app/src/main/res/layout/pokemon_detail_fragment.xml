@@ -11,7 +11,16 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ff66d9">
+        android:paddingStart="2dp"
+        android:background="#ff80e1">
+        <TextView
+            android:text="#"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:gravity="center" />
         <TextView
             android:id="@+id/pokedexDetailId"
             android:text="001"
@@ -255,9 +264,10 @@
 
     <TextView
         android:id="@+id/pokedexDetailAboutDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffb84d"
+        android:paddingStart="2dp"
         android:text="Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger."
         android:layout_below="@+id/pokedexDetailAboutDivider"
         android:textColor="@android:color/black" />
@@ -275,7 +285,7 @@
         android:id="@+id/pokedexDetailFastAttack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fast Attack(s)"
+        android:text="Fast Move(s)"
         android:background="#92C94A"
         android:textSize="18sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -310,7 +320,8 @@
                 android:layout_height="wrap_content"
                 android:text="Name:"
                 android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:layout_marginStart="2dp"
+                android:textColor="@android:color/black" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -333,6 +344,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Type:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <ImageView
@@ -357,6 +369,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Power:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -380,6 +393,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cooldown:"
                 android:textStyle="bold"
+                android:layout_marginStart="2dp"
                 android:textColor="@android:color/black" />
             <TextView
                 android:layout_width="wrap_content"
@@ -401,6 +415,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Energy:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -423,6 +438,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DPS:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -445,6 +461,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="w/STAB"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -473,7 +490,7 @@
         android:id="@+id/pokedexDetailSpecialAttack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Special Attack(s)"
+        android:text="Special Move(s)"
         android:textSize="18sp"
         android:background="#4da6ff"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -507,8 +524,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Name:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -531,6 +549,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Type:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <ImageView
@@ -556,6 +575,7 @@
                 android:layout_height="wrap_content"
                 android:text="Power:"
                 android:textStyle="bold"
+                android:layout_marginStart="2dp"
                 android:textColor="@android:color/black" />
             <TextView
                 android:layout_width="match_parent"
@@ -577,6 +597,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cooldown:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -599,6 +620,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Energy:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -621,6 +643,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="DPS:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -642,7 +665,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="w/STAB"
+                android:text="w/STAB:"
+                android:layout_marginStart="2dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
@@ -656,98 +680,173 @@
                 android:text="20.8"
                 android:textColor="@android:color/black" />
         </TableRow>
-        <!-- Very effective -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#4da6ff">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text="Super Effective"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <org.apmem.tools.layouts.FlowLayout
-                android:layout_weight="0.4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_ground"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_rock"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_water"/>
-            </org.apmem.tools.layouts.FlowLayout>
-            <org.apmem.tools.layouts.FlowLayout
-                android:layout_weight="0.4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_bug"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_dragon"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_fire"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_flying"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/type_grass"/>
 
-            </org.apmem.tools.layouts.FlowLayout>
-
-        </TableRow>
-        <!-- Not very effective -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#80bfff">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Not Very Effective"
-                android:layout_weight="0.2"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="31.3"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="20.8"
-                android:textColor="@android:color/black" />
-        </TableRow>
     </TableLayout>
 
-    <!-- Specila Attack divider -->
+    <!-- Special Attack divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
     <View
         android:id="@+id/pokedexDetailSpecialAttackLayoutDivier"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/black"
         android:layout_below="@+id/pokedexDetailSpecialAttackLayout" />
 
+    <TextView
+        android:id="@+id/pokedexDetailIdealMoveset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ideal Moveset"
+        android:background="#9999ff"
+        android:textSize="18sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_below="@+id/pokedexDetailSpecialAttackLayoutDivier" />
+
+    <!-- Ideal Moveset divider -->
+    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+    <View
+        android:id="@+id/pokedexDetailIdealMovesetDivier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/pokedexDetailIdealMoveset" />
+    <LinearLayout
+        android:id="@+id/pokedexDetailIdealMovesetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#b3b3ff"
+        android:layout_below="@+id/pokedexDetailIdealMovesetDivier">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Vine Whip"
+            android:layout_marginStart="2dp"
+            android:textColor="@android:color/black"
+            android:drawableStart="@drawable/type_grass"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Power Whip"
+            android:layout_marginStart="2dp"
+            android:textColor="@android:color/black"
+            android:drawableStart="@drawable/type_grass"/>
+    </LinearLayout>
+    <!-- Ideal Moveset Layout divider -->
+    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+    <View
+        android:id="@+id/pokedexDetailIdealMovesetLayoutDivier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/pokedexDetailIdealMovesetLayout" />
+
+    <LinearLayout
+        android:id="@+id/pokedexDetailEvolution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#6666ff"
+        android:layout_below="@+id/pokedexDetailIdealMovesetLayoutDivier"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/pokedexDetailEvolutionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:text="Baulbasaur"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:text=" Evolution"/>
+    </LinearLayout>
+    <!-- Evolution divider -->
+    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+    <View
+        android:id="@+id/pokedexDetailEvolutionDivier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/pokedexDetailEvolution" />
+    <TableLayout
+        android:id="@+id/pokedexDetailEvolutionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pokedexDetailEvolutionDivier"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        android:gravity="center">
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#b3b3ff">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evolves From"
+                android:textStyle="bold"
+                android:layout_marginStart="2dp"
+                android:textColor="@android:color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evolves Into"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#9999ff">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_marginStart="2dp"
+                android:textColor="@android:color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ivysaur"
+                android:textColor="@android:color/black" />
+        </TableRow>
+    </TableLayout>
+    <!-- Evolution divider -->
+    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+    <View
+        android:id="@+id/pokedexDetailEvolutionLayoutDivier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/pokedexDetailEvolutionLayout" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/pokedexDetailEvolutionLayoutDivier">
+        <Button
+            android:id="@+id/pokedexDetailPreviousButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Previous Pokemon"/>
+        <Button
+            android:id="@+id/pokedexDetailNextButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Next Pokemon" />
+    </LinearLayout>
 
 </RelativeLayout>
