@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="2dp"
     android:background="@drawable/pokedex_list_selector"
-    android:orientation="vertical"
-    android:clickable="true">
+    android:orientation="vertical">
 
     <!-- id -->
     <TextView
@@ -48,32 +47,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="35sp"
         android:layout_toEndOf="@+id/pokedexImageThumbnail"
         android:layout_alignTop="@+id/pokedexId"
         android:layout_marginStart="5dp"
         android:textStyle="bold" />
-
-    <!-- first type of pokemon -->
-    <TextView
-        android:id="@+id/pokedexType1"
-        android:text="type1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/pokedexName"
-        android:layout_below="@+id/pokedexName"
-        android:layout_alignBottom="@+id/pokedexId"
-        />
-
-    <!-- second type of pokemon -->
-    <TextView
-        android:id="@+id/pokedexType2"
-        android:text="type2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/pokedexType1"
-        android:layout_below="@+id/pokedexName"
-        android:layout_alignBottom="@+id/pokedexId"
-        android:layout_marginStart="5dp" />
 
     <ImageView
         android:layout_width="20dp"

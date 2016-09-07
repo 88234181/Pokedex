@@ -60,10 +60,13 @@ public class PokedexFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
 
+        //grab the pokemon info associated with the item we click
         Pokemon pokemon = (Pokemon) getListAdapter().getItem(position);
 
+        //create a new intent that launches our PokemonDetailActivity
         Intent intent = new Intent(getActivity(), PokemonDetailActivity.class);
 
+        //pass along the information of the pokemon we clicked
         intent.putExtra(POKEMON_ID, pokemon.getId());
         intent.putExtra(POKEMON_NAME, pokemon.getName());
         intent.putExtra(POKEMON_TYPE1, pokemon.getType1());

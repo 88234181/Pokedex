@@ -19,6 +19,8 @@ public class PokemonDetailFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup convertView, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.pokemon_detail_fragment, convertView, false);
 
+
+
         return view;
     }
 }
