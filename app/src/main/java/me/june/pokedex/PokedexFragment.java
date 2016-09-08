@@ -43,10 +43,7 @@ public class PokedexFragment extends ListFragment {
             Element e = (Element) pokemons.item(i);
             String id = parser.getValue(e, "id");
             String name = parser.getValue(e, "name");
-            String type1 = parser.getValue(e, "type1");
-            String type2 = parser.getValue(e, "type2");
-            String candyToEvolve = parser.getValue(e, "candyToEvolve");
-            Pokemon pokemon = new Pokemon(id, name, type1, type2, Integer.parseInt(candyToEvolve));
+            Pokemon pokemon = new Pokemon(id, name);
 
             pokedex.add(pokemon);
         }
@@ -69,8 +66,6 @@ public class PokedexFragment extends ListFragment {
         //pass along the information of the pokemon we clicked
         intent.putExtra(POKEMON_ID, pokemon.getId());
         intent.putExtra(POKEMON_NAME, pokemon.getName());
-        intent.putExtra(POKEMON_TYPE1, pokemon.getType1());
-        intent.putExtra(POKEMON_TYPE2, pokemon.getType2());
 
         startActivity(intent);
     }

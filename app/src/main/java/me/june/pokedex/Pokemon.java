@@ -22,6 +22,11 @@ public class Pokemon {
         this.candyToEvolve = candyToEvolve;
     }
 
+    public Pokemon(String id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     private static int[] POKEMON_DRAWABLES = {
             R.drawable.pokedex001, R.drawable.pokedex002, R.drawable.pokedex003, R.drawable.pokedex004, R.drawable.pokedex005,
             R.drawable.pokedex006, R.drawable.pokedex007, R.drawable.pokedex008, R.drawable.pokedex009, R.drawable.pokedex010,

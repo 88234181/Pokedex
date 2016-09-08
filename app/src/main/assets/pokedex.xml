@@ -7,6 +7,19 @@
         <type2>Poison</type2>
         <candyToEvolve>25</candyToEvolve>
         <evolution>Ivysaur</evolution>
+        <Resistance>
+            <item>Water</item>
+            <item>Electric</item>
+            <item>Grass</item>
+            <item>Fighting</item>
+            <item>Fairy</item>
+        </Resistance>
+        <Weakness>
+            <item>Fire</item>
+            <item>Ice</item>
+            <item>Flying</item>
+            <item>Psychic</item>
+        </Weakness>
         <attackmoves>
             <move>
                 <name>Tackle</name>
