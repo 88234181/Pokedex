@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
@@ -28,14 +30,17 @@ public class PokemonDetailFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup convertView, Bundle savedInstanceState){
         View fragmentLayout = inflater.inflate(R.layout.pokemon_detail_fragment, convertView, false);
 
-        //grab the pokemon info from the local assets
-        XMLParser parser = new XMLParser(getContext());
-        Document doc = parser.getDomElement();
-        NodeList pokemons = doc.getElementsByTagName("pokemon");
-
+        //grab the pokemon id
         Intent intent = getActivity().getIntent();
         int pokemonId = intent.getExtras().getInt(POKEMON_ID);
 
+        //grab the pokemon info from the local assets according to the id
+        XMLParser parser = new XMLParser(getContext());
+        Document doc = parser.getDomElement();
+        Element pokemon = (Element) doc.getElementsByTagName("pokemon").item(pokemonId-1);
+
+
+        //locate all the views that needs to be changed in the layout
         TextView id = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailId);
         TextView name = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailName);
         ImageView type1 = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailType1);
@@ -46,7 +51,29 @@ public class PokemonDetailFragment extends Fragment{
         TextView candyToEvolve = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailCandyToEvolve);
         ImageView image = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailImage);
 
+        //setting all the values
+        id.setText(String.valueOf(pokemonId));
+        name.setText(parser.getValue(pokemon, "name"));
+        type1.setImageResource(Pokemon.getTypeDrawable(parser.getValue(pokemon, "type1")));
+        if(!parser.getValue(pokemon, "type2").isEmpty()){//some pokemon only has one type
+            type2.setImageResource(Pokemon.getTypeDrawable(parser.getValue(pokemon, "type2")));
+        }
+        stamina.setText(parser.getValue(pokemon, "stamina"));
+        attack.setText(parser.getValue(pokemon, "attack"));
+        defense.setText(parser.getValue(pokemon, "defense"));
+        candyToEvolve.setText(parser.getValue(pokemon, "candyToEvolve"));
+        image.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
+
+        //programmatically generate the resistance image in the resistance layout
         LinearLayout resistanceLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailResistanceLayout);
+        NodeList resistances = pokemon.getElementsByTagName("resistance");
+        for(int i = 0; i < resistances.getLength(); i++){
+            Element e = (Element) resistances.item(i);
+
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
+
+        }
         ImageView imageView = new ImageView(getActivity());
         imageView.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

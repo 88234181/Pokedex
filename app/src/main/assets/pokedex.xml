@@ -6,20 +6,23 @@
         <type1>Grass</type1>
         <type2>Poison</type2>
         <candyToEvolve>25</candyToEvolve>
-        <evolution>Ivysaur</evolution>
-        <Resistance>
+        <evolution>002</evolution>
+        <stamina>90</stamina>
+        <attack>126</attack>
+        <defense>126</defense>
+        <resistance>
             <item>Water</item>
             <item>Electric</item>
             <item>Grass</item>
             <item>Fighting</item>
             <item>Fairy</item>
-        </Resistance>
-        <Weakness>
+        </resistance>
+        <weakness>
             <item>Fire</item>
             <item>Ice</item>
             <item>Flying</item>
             <item>Psychic</item>
-        </Weakness>
+        </weakness>
         <attackmoves>
             <move>
                 <name>Tackle</name>

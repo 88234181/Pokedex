@@ -61,6 +61,8 @@ public class Pokemon {
             R.drawable.pokedex149, R.drawable.pokedex150, R.drawable.pokedex151
     };
 
+
+
     public String getId(){
         return id;
     }
@@ -95,4 +97,45 @@ public class Pokemon {
         return POKEMON_DRAWABLES[id-1];
     }
 
+    public static int getTypeDrawable(String type){
+        switch (type){
+            case "bug":
+                return R.drawable.type_bug;
+            case "dark":
+                return R.drawable.type_dark;
+            case "dragon":
+                return R.drawable.type_dragon;
+            case "eletric":
+                return R.drawable.type_electric;
+            case "fairy":
+                return R.drawable.type_fairy;
+            case "fighting":
+                return R.drawable.type_fighting;
+            case "fire":
+                return R.drawable.type_fire;
+            case "flying":
+                return R.drawable.type_flying;
+            case "ghost":
+                return R.drawable.type_ghost;
+            case "grass":
+                return R.drawable.type_grass;
+            case "ground":
+                return R.drawable.type_ground;
+            case "ice":
+                return R.drawable.type_ice;
+            case "normal":
+                return R.drawable.type_normal;
+            case "poison":
+                return R.drawable.type_poison;
+            case "psychic":
+                return R.drawable.type_psychic;
+            case "rock":
+                return R.drawable.type_rock;
+            case "steel":
+                return R.drawable.type_steel;
+            case "water":
+                return R.drawable.type_water;
+        }
+        return R.drawable.type_unknown;
+    }
 }
