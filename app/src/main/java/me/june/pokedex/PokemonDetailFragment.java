@@ -12,8 +12,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/8/23.
@@ -30,15 +31,14 @@ public class PokemonDetailFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup convertView, Bundle savedInstanceState){
         View fragmentLayout = inflater.inflate(R.layout.pokemon_detail_fragment, convertView, false);
 
+
         //grab the pokemon id
         Intent intent = getActivity().getIntent();
         int pokemonId = intent.getExtras().getInt(POKEMON_ID);
 
         //grab the pokemon info from the local assets according to the id
-        XMLParser parser = new XMLParser(getContext());
-        Document doc = parser.getDomElement();
-        Element pokemon = (Element) doc.getElementsByTagName("pokemon").item(pokemonId-1);
-
+        XMLParser parser = new XMLParser(getContext(), pokemonId);
+        Element pokemon = parser.getPokemon();
 
         //locate all the views that needs to be changed in the layout
         TextView id = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailId);
@@ -66,19 +66,17 @@ public class PokemonDetailFragment extends Fragment{
 
         //programmatically generate the resistance image in the resistance layout
         LinearLayout resistanceLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailResistanceLayout);
-        NodeList resistances = pokemon.getElementsByTagName("resistance");
-        for(int i = 0; i < resistances.getLength(); i++){
-            Element e = (Element) resistances.item(i);
-
+        List<String> resistances = parser.getResistanceValues();
+        for(int i = 0; i < resistances.size(); i++){
             ImageView imageView = new ImageView(getActivity());
-            imageView.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
-
+            imageView.setImageResource(Pokemon.getTypeDrawable(resistances.get(i)));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(2,2,2,2);
+            imageView.setLayoutParams(layoutParams);
+            resistanceLayout.addView(imageView);
         }
-        ImageView imageView = new ImageView(getActivity());
-        imageView.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(2,2,2,2);
-        resistanceLayout.addView(imageView);
+
+
         return fragmentLayout;
     }
 }

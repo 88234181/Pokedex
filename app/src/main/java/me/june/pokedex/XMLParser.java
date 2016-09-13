@@ -12,6 +12,8 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,6 +25,12 @@ import javax.xml.parsers.ParserConfigurationException;
 public class XMLParser {
 
     private Context context;
+    private int id;
+
+    public XMLParser(Context context, int id){
+        this.context = context;
+        this.id = id;
+    }
 
     public XMLParser(Context context){
         this.context = context;
@@ -32,7 +40,7 @@ public class XMLParser {
      *
      * @return Document
      */
-    public Document getDomElement(){
+    public Document getPokedexDom(){
         Document doc = null;
         String file = "pokedex.xml";
         try{
@@ -77,8 +85,42 @@ public class XMLParser {
         return "";
     }
 
+    public List<String> getElementValues(Node element){
+        Node child;
+        List<String> values = new ArrayList<>();
+
+        if(element != null){
+            if(element.hasChildNodes()){
+                for(child = element.getFirstChild(); child != null; child = child.getNextSibling()){
+                    values.add(child.getNodeValue());
+                }
+            }
+        }
+        return values;
+    }
+
+
     public String getValue(Element item, String str){
         NodeList n = item.getElementsByTagName(str);
         return this.getElementValue(n.item(0));
+    }
+
+    /**
+     *
+     * @return the pokemon element according to id
+     */
+    public Element getPokemon(){
+        Document pokedexDom = getPokedexDom();
+        Element pokemon = (Element) pokedexDom.getElementsByTagName("pokemon").item(id-1);
+        return pokemon;
+    }
+
+    /**
+     *
+     * @return the values of all the resistances
+     */
+    public List<String> getResistanceValues(){
+        Node resistance = getPokemon().getElementsByTagName("resistance").item(0);
+        return getElementValues(resistance);
     }
 }

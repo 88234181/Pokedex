@@ -34,7 +34,7 @@ public class PokedexFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
 
         XMLParser parser = new XMLParser(getContext());
-        Document doc = parser.getDomElement();
+        Document doc = parser.getPokedexDom();
 
         NodeList pokemons = doc.getElementsByTagName("pokemon");
         pokedex = new ArrayList<>();
