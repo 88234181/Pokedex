@@ -85,20 +85,26 @@ public class XMLParser {
         return "";
     }
 
+    /*
     public List<String> getElementValues(Node element){
         Node child;
         List<String> values = new ArrayList<>();
 
-        if(element != null){
-            if(element.hasChildNodes()){
-                for(child = element.getFirstChild(); child != null; child = child.getNextSibling()){
-                    values.add(child.getNodeValue());
+        NodeList childNodes = element.getElementsByTagName();
+        for(int i = 0; i < childNodes.getLength(); i++){
+            Node temp = childNodes.item(i);
+            if(temp != null){
+                if(temp.hasChildNodes()){
+                    for(child = element.getFirstChild(); child != null; child = child.getNextSibling()) {
+                        values.add(temp.getNodeValue());
+                    }
                 }
             }
         }
+
         return values;
     }
-
+    */
 
     public String getValue(Element item, String str){
         NodeList n = item.getElementsByTagName(str);
@@ -120,7 +126,26 @@ public class XMLParser {
      * @return the values of all the resistances
      */
     public List<String> getResistanceValues(){
-        Node resistance = getPokemon().getElementsByTagName("resistance").item(0);
-        return getElementValues(resistance);
+        List<String> values = new ArrayList<>();
+        Element resistance = (Element) getPokemon().getElementsByTagName("resistance").item(0);
+        NodeList childNodes = resistance.getElementsByTagName("item");
+        for(int i = 0; i < childNodes.getLength(); i++) {
+            values.add(getElementValue(childNodes.item(i)));
+        }
+        return values;
     }
+    /**
+     *
+     * @return the values of all the weaknesses
+     */
+    public List<String> getWeaknessValues(){
+        List<String> values = new ArrayList<>();
+        Element weakness = (Element) getPokemon().getElementsByTagName("weakness").item(0);
+        NodeList childNodes = weakness.getElementsByTagName("item");
+        for(int i = 0; i < childNodes.getLength(); i++) {
+            values.add(getElementValue(childNodes.item(i)));
+        }
+        return values;
+    }
+
 }

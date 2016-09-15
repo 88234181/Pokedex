@@ -98,14 +98,15 @@ public class Pokemon {
     }
 
     public static int getTypeDrawable(String type){
-        switch (type){
+
+        switch (type.toLowerCase()){
             case "bug":
                 return R.drawable.type_bug;
             case "dark":
                 return R.drawable.type_dark;
             case "dragon":
                 return R.drawable.type_dragon;
-            case "eletric":
+            case "electric":
                 return R.drawable.type_electric;
             case "fairy":
                 return R.drawable.type_fairy;

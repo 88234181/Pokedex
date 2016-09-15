@@ -34,7 +34,7 @@ public class PokemonDetailFragment extends Fragment{
 
         //grab the pokemon id
         Intent intent = getActivity().getIntent();
-        int pokemonId = intent.getExtras().getInt(POKEMON_ID);
+        int pokemonId = Integer.parseInt(intent.getExtras().getString(POKEMON_ID));
 
         //grab the pokemon info from the local assets according to the id
         XMLParser parser = new XMLParser(getContext(), pokemonId);
@@ -75,7 +75,17 @@ public class PokemonDetailFragment extends Fragment{
             imageView.setLayoutParams(layoutParams);
             resistanceLayout.addView(imageView);
         }
-
+        //programmatically generate the weakness image in the resistance layout
+        LinearLayout weaknessLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailWeaknessLayout);
+        List<String> weaknesses = parser.getWeaknessValues();
+        for(int i = 0; i < resistances.size(); i++){
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setImageResource(Pokemon.getTypeDrawable(weaknesses.get(i)));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(2,2,2,2);
+            imageView.setLayoutParams(layoutParams);
+            weaknessLayout.addView(imageView);
+        }
 
         return fragmentLayout;
     }
