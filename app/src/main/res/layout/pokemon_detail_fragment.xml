@@ -89,14 +89,12 @@
             <ImageView
                 android:id="@+id/pokedexDetailType1"
                 android:contentDescription="Grass"
-                android:src="@drawable/type_grass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp" />
             <ImageView
                 android:id="@+id/pokedexDetailType2"
                 android:contentDescription="Poison"
-                android:src="@drawable/type_poison"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"/>
@@ -170,30 +168,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Electric"
-                android:src="@drawable/type_electric"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Grass"
-                android:src="@drawable/type_grass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Fighting"
-                android:src="@drawable/type_fighting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Fairy"
-                android:src="@drawable/type_fairy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
                 -->
         </LinearLayout>
 
@@ -218,24 +192,6 @@
             <ImageView
                 android:contentDescription="Fire"
                 android:src="@drawable/type_fire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Ice"
-                android:src="@drawable/type_ice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Flying"
-                android:src="@drawable/type_flying"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:contentDescription="Psychic"
-                android:src="@drawable/type_psychic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp" />
@@ -279,8 +235,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffb84d"
+        android:text="description"
         android:paddingStart="2dp"
-        android:text="Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger."
         android:layout_below="@+id/pokedexDetailAboutDivider"
         android:textColor="@android:color/black" />
 

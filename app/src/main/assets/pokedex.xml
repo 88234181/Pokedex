@@ -23,16 +23,23 @@
             <item>Flying</item>
             <item>Psychic</item>
         </weakness>
+        <about>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</about>
         <attackmoves>
             <move>
                 <name>Tackle</name>
                 <type>Normal</type>
                 <damage>12</damage>
+                <cooldown>1.1 sec</cooldown>
+                <dps>10.9</dps>
+                <wstab>10.9</wstab>
             </move>
             <move>
                 <name>Vine Whip</name>
                 <type>Grass</type>
                 <damage>7</damage>
+                <cooldown>0.65 sec</cooldown>
+                <dps>10.8</dps>
+                <wstab>13.5</wstab>
             </move>
         </attackmoves>
         <specialmoves>

@@ -40,28 +40,33 @@ public class PokemonDetailFragment extends Fragment{
         XMLParser parser = new XMLParser(getContext(), pokemonId);
         Element pokemon = parser.getPokemon();
 
-        //locate all the views that needs to be changed in the layout
+        /**
+         * Locate and set all the values in pokemon detail fragment
+         */
+        // id of the pokemon
         TextView id = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailId);
+        id.setText(String.valueOf(pokemonId));
+        // name of the pokemon
         TextView name = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailName);
+        name.setText(parser.getValue(pokemon, "name"));
+        // types of the pokemon
         ImageView type1 = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailType1);
         ImageView type2 = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailType2);
-        TextView stamina = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailStamina);
-        TextView attack = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailAttack);
-        TextView defense = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailDefense);
-        TextView candyToEvolve = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailCandyToEvolve);
-        ImageView image = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailImage);
-
-        //setting all the values
-        id.setText(String.valueOf(pokemonId));
-        name.setText(parser.getValue(pokemon, "name"));
         type1.setImageResource(Pokemon.getTypeDrawable(parser.getValue(pokemon, "type1")));
         if(!parser.getValue(pokemon, "type2").isEmpty()){//some pokemon only has one type
             type2.setImageResource(Pokemon.getTypeDrawable(parser.getValue(pokemon, "type2")));
         }
+        // basic stats of the pokemon
+        TextView stamina = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailStamina);
+        TextView attack = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailAttack);
+        TextView defense = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailDefense);
+        TextView candyToEvolve = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailCandyToEvolve);
         stamina.setText(parser.getValue(pokemon, "stamina"));
         attack.setText(parser.getValue(pokemon, "attack"));
         defense.setText(parser.getValue(pokemon, "defense"));
         candyToEvolve.setText(parser.getValue(pokemon, "candyToEvolve"));
+        // the image of the pokemon
+        ImageView image = (ImageView) fragmentLayout.findViewById(R.id.pokedexDetailImage);
         image.setImageResource(Pokemon.getAssociateDrawable(pokemonId));
 
         //programmatically generate the resistance image in the resistance layout
@@ -78,7 +83,7 @@ public class PokemonDetailFragment extends Fragment{
         //programmatically generate the weakness image in the resistance layout
         LinearLayout weaknessLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailWeaknessLayout);
         List<String> weaknesses = parser.getWeaknessValues();
-        for(int i = 0; i < resistances.size(); i++){
+        for(int i = 0; i < weaknesses.size(); i++){
             ImageView imageView = new ImageView(getActivity());
             imageView.setImageResource(Pokemon.getTypeDrawable(weaknesses.get(i)));
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -86,6 +91,10 @@ public class PokemonDetailFragment extends Fragment{
             imageView.setLayoutParams(layoutParams);
             weaknessLayout.addView(imageView);
         }
+
+        // about description of the pokemon
+        TextView about = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailAboutDescription);
+        about.setText(parser.getValue(pokemon, "about"));
 
         return fragmentLayout;
     }
