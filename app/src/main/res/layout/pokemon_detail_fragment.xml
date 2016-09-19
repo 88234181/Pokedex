@@ -199,7 +199,6 @@
         </LinearLayout>
     </LinearLayout>
 
-
     <!-- image divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
     <View
@@ -270,180 +269,85 @@
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/pokedexDetailFastAttack" />
 
-
-    <TableLayout
+    <LinearLayout
         android:id="@+id/pokedexDetailFastAttackLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pokedexDetailFastAttackDivier"
-        android:stretchColumns="*"
-        android:gravity="center" >
-        <!-- Skill Names -->
-        <TableRow
-            android:layout_height="wrap_content"
+        android:layout_below="@+id/pokedexDetailFastAttackDivier">
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:background="#b8dc89">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name:"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tackle"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vine Whip"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill Type -->
-        <TableRow
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#acd676">
+            android:layout_weight="1"
+            android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type:"
-                android:layout_marginStart="2dp"
+                android:text="@string/name"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <ImageView
-                android:contentDescription="This skill type is normal"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center_vertical|start"
-                android:src="@drawable/type_normal"/>
-            <ImageView
-                android:contentDescription="This skill type is grass"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/type_grass"
-                android:layout_gravity="center_vertical|start" />
-        </TableRow>
-        <!-- Skill Power -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#b8dc89">
+                android:textColor="@android:color/black"
+                android:background="#b8dc89"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Power:"
-                android:layout_marginStart="2dp"
+                android:text="@string/type"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:background="#acd676"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="12"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill CD -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#acd676">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cooldown:"
+                android:text="@string/power"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:background="#b8dc89"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.1 sec"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.65 sec"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill Energy -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#b8dc89">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Energy:"
-                android:layout_marginStart="2dp"
+                android:text="@string/cooldown"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:background="#acd676"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="7"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill DPS -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#acd676">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DPS:"
-                android:layout_marginStart="2dp"
+                android:text="@string/energy"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:background="#b8dc89"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10.9"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10.8"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill w/STAB -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:background="#b8dc89">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="w/STAB"
-                android:layout_marginStart="2dp"
+                android:text="@string/dps"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:background="#acd676"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10.9"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="13.5"
-                android:textColor="@android:color/black" />
-        </TableRow>
-    </TableLayout>
+                android:text="@string/wstab"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#b8dc89"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- Fast Attack layout divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
@@ -475,181 +379,85 @@
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/pokedexDetailSpecialAttack" />
 
-    <TableLayout
+    <LinearLayout
         android:id="@+id/pokedexDetailSpecialAttackLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pokedexDetailSpecialAttackDivier"
-        android:shrinkColumns="*"
-        android:stretchColumns="*"
-        android:gravity="center" >
-        <!-- Skill Names -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#80bfff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Name:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Power Whip"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Seed Bomb"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill Type -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#4da6ff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Type:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <ImageView
-                android:contentDescription="This skill type is grass"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_gravity="center_vertical|start"
-                android:src="@drawable/type_grass"/>
-            <ImageView
-                android:contentDescription="This skill type is grass"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:src="@drawable/type_grass"
-                android:layout_gravity="center_vertical|start" />
-        </TableRow>
-        <!-- Skill Power -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#80bfff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Power:"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="70"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="40"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill CD -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#4da6ff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cooldown:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2.8 sec"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2.4 sec"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill Energy -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#80bfff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Energy:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="-100"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="-33"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill DPS -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#4da6ff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="DPS:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="25.0"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="16.7"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <!-- Skill w/STAB -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#80bfff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="w/STAB:"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="31.3"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="20.8"
-                android:textColor="@android:color/black" />
-        </TableRow>
+        android:layout_below="@+id/pokedexDetailSpecialAttackDivier">
 
-    </TableLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#80bfff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#4da6ff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/power"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#80bfff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cooldown"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#4da6ff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/energy"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#80bfff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dps"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#4da6ff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wstab"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:background="#80bfff"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- Special Attack divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->

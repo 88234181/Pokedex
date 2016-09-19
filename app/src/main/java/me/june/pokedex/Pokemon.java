@@ -12,7 +12,7 @@ public class Pokemon {
     private String type2;
     private int candyToEvolve;
     private String about;
-    private ArrayList<Skills> possibleSkills;
+    private ArrayList<Skill> possibleSkills;
 
     public Pokemon(String id, String name, String type1, String type2, int candyToEvolve){
         this.id = id;
@@ -85,7 +85,7 @@ public class Pokemon {
         return candyToEvolve;
     }
 
-    public ArrayList<Skills> getPossibleSkills(){
+    public ArrayList<Skill> getPossibleSkills(){
         return possibleSkills;
     }
 

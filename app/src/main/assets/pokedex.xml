@@ -24,42 +24,53 @@
             <item>Psychic</item>
         </weakness>
         <about>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</about>
-        <attackmoves>
+        <fastmoves>
             <move>
                 <name>Tackle</name>
                 <type>Normal</type>
-                <damage>12</damage>
-                <cooldown>1.1 sec</cooldown>
+                <power>12</power>
+                <cooldown>1.1</cooldown>
+                <energy>7</energy>
                 <dps>10.9</dps>
                 <wstab>10.9</wstab>
             </move>
             <move>
                 <name>Vine Whip</name>
                 <type>Grass</type>
-                <damage>7</damage>
-                <cooldown>0.65 sec</cooldown>
+                <power>7</power>
+                <cooldown>0.65</cooldown>
+                <energy>7</energy>
                 <dps>10.8</dps>
                 <wstab>13.5</wstab>
             </move>
-        </attackmoves>
+        </fastmoves>
         <specialmoves>
             <move>
                 <name>Power Whip</name>
                 <type>Grass</type>
-                <damage>70</damage>
-                <bar>1</bar>
+                <power>70</power>
+                <cooldown>2.8</cooldown>
+                <energy>-100</energy>
+                <dps>25</dps>
+                <wstab>31.3</wstab>
             </move>
             <move>
                 <name>Seed Bomb</name>
                 <type>Grass</type>
-                <damage>40</damage>
-                <bar>3</bar>
+                <power>40</power>
+                <cooldown>2.4</cooldown>
+                <energy>-33</energy>
+                <dps>16.7</dps>
+                <wstab>20.8</wstab>
             </move>
             <move>
                 <name>Sludge Bomb</name>
                 <type>Poison</type>
-                <damage>55</damage>
-                <bar>2</bar>
+                <power>55</power>
+                <cooldown>2.6</cooldown>
+                <energy>-50</energy>
+                <dps>21.2</dps>
+                <wstab>26.4</wstab>
             </move>
         </specialmoves>
     </pokemon>

@@ -148,4 +148,23 @@ public class XMLParser {
         return values;
     }
 
+    public List<Skill> getMoves(String typeOfMoves){
+        List<Skill> values = new ArrayList<>();
+        Element moveSet;
+        if(typeOfMoves.equals("fastmoves")){
+            moveSet = (Element) getPokemon().getElementsByTagName("fastmoves").item(0);
+        }else{
+            moveSet = (Element) getPokemon().getElementsByTagName("specialmoves").item(0);
+        }
+
+        NodeList moves = moveSet.getElementsByTagName("move");
+        for(int i = 0; i < moves.getLength(); i++) {
+            Element move = (Element) moves.item(i);
+            Skill skill = new Skill(getValue(move, "name"), getValue(move, "type"), Integer.parseInt(getValue(move, "power")),
+                    Float.parseFloat(getValue(move, "cooldown")), Integer.parseInt(getValue(move, "energy")),
+                    Float.parseFloat(getValue(move, "dps")), Float.parseFloat(getValue(move, "wstab")));
+            values.add(skill);
+        }
+        return values;
+    }
 }

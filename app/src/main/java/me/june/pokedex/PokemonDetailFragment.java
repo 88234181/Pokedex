@@ -1,6 +1,8 @@
 package me.june.pokedex;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,6 +24,8 @@ import java.util.List;
 public class PokemonDetailFragment extends Fragment{
 
     private static final String POKEMON_ID = "POKEMON ID";
+
+    private static final String[] skillStat = {"name", "type", "power", "cooldown", "energy", "dps", "wstab"};
 
     public PokemonDetailFragment(){
 
@@ -45,7 +49,7 @@ public class PokemonDetailFragment extends Fragment{
          */
         // id of the pokemon
         TextView id = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailId);
-        id.setText(String.valueOf(pokemonId));
+        id.setText(intent.getExtras().getString(POKEMON_ID));
         // name of the pokemon
         TextView name = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailName);
         name.setText(parser.getValue(pokemon, "name"));
@@ -72,30 +76,95 @@ public class PokemonDetailFragment extends Fragment{
         //programmatically generate the resistance image in the resistance layout
         LinearLayout resistanceLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailResistanceLayout);
         List<String> resistances = parser.getResistanceValues();
-        for(int i = 0; i < resistances.size(); i++){
-            ImageView imageView = new ImageView(getActivity());
-            imageView.setImageResource(Pokemon.getTypeDrawable(resistances.get(i)));
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(2,2,2,2);
-            imageView.setLayoutParams(layoutParams);
-            resistanceLayout.addView(imageView);
-        }
+        populateResistancesAndWeakness(resistanceLayout, resistances);
+
         //programmatically generate the weakness image in the resistance layout
         LinearLayout weaknessLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailWeaknessLayout);
         List<String> weaknesses = parser.getWeaknessValues();
-        for(int i = 0; i < weaknesses.size(); i++){
-            ImageView imageView = new ImageView(getActivity());
-            imageView.setImageResource(Pokemon.getTypeDrawable(weaknesses.get(i)));
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(2,2,2,2);
-            imageView.setLayoutParams(layoutParams);
-            weaknessLayout.addView(imageView);
-        }
+        populateResistancesAndWeakness(weaknessLayout, weaknesses);
 
         // about description of the pokemon
         TextView about = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailAboutDescription);
         about.setText(parser.getValue(pokemon, "about"));
 
+        // programmatically generate the fast moves of the pokemon
+        LinearLayout fastMovesLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailFastAttackLayout);
+        List<Skill> fastMoves = parser.getMoves("fastmoves");
+        populateMoves(fastMovesLayout, fastMoves, getString(R.string.fastMoveOdd), getString(R.string.fastMoveEven));
+
+        LinearLayout specialMovesLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailSpecialAttackLayout);
+        List<Skill> specialMoves = parser.getMoves("specialmoves");
+        populateMoves(specialMovesLayout, specialMoves, getString(R.string.specialMoveOdd), getString(R.string.specialMoveEven));
+
         return fragmentLayout;
+    }
+
+    /**
+     *
+     * @param layout the layout contains these drawable
+     * @param values list of types
+     */
+    public void populateResistancesAndWeakness(LinearLayout layout, List<String> values){
+        for(int i = 0; i < values.size(); i++){
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setImageResource(Pokemon.getTypeDrawable(values.get(i)));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(2,2,2,2);
+            imageView.setLayoutParams(layoutParams);
+            layout.addView(imageView);
+        }
+    }
+
+    /**
+     *
+     * @param movesLayout the layout contains all moves
+     * @param moves list of moves
+     * @param color1 background color of the odd number row
+     * @param color2 background color of the even number row
+     */
+    public void populateMoves(LinearLayout movesLayout, List<Skill> moves, String color1, String color2){
+        for(int i = 0; i < moves.size(); i++){
+            Skill move = moves.get(i);
+            LinearLayout fastmove = new LinearLayout(getActivity());
+            fastmove.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 2));
+            fastmove.setOrientation(LinearLayout.VERTICAL);
+            for(int j = 0; j < 7; j++){
+                TextView textView = new TextView(getActivity());
+                textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                textView.setTypeface(null, Typeface.BOLD);
+                textView.setTextColor(Color.BLACK);
+                textView.setPadding(2,0,2,0);
+                if(j%2 == 0){
+                    textView.setBackgroundColor(Color.parseColor(color1));
+                }else{
+                    textView.setBackgroundColor(Color.parseColor(color2));
+                }
+                switch(skillStat[j]){
+                    case "name":
+                        textView.setText(move.getName());
+                        break;
+                    case "type":
+                        textView.setCompoundDrawablesWithIntrinsicBounds(Pokemon.getTypeDrawable(move.getType()),0,0,0);
+                        break;
+                    case "power":
+                        textView.setText(String.valueOf(move.getPower()));
+                        break;
+                    case "cooldown":
+                        textView.setText(String.valueOf(move.getCooldown()));
+                        break;
+                    case "energy":
+                        textView.setText(String.valueOf(move.getEnergy()));
+                        break;
+                    case "dps":
+                        textView.setText(String.valueOf(move.getDps()));
+                        break;
+                    case "wstab":
+                        textView.setText(String.valueOf(move.getWstab()));
+                        break;
+                }
+                fastmove.addView(textView);
+            }
+            movesLayout.addView(fastmove);
+        }
     }
 }

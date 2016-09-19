@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Pokedex</string>
     <string name="pokemon_detail">Pokemon Detail</string>
+
+    <!-- Move Stat -->
+    <string name="name">Name:</string>
+    <string name="type">Type:</string>
+    <string name="power">Power:</string>
+    <string name="cooldown">Cooldown:</string>
+    <string name="energy">Energy:</string>
+    <string name="dps">DPS:</string>
+    <string name="wstab">w/STAB</string>
+
+    <!-- skills table colors color-->
+    <string name="fastMoveOdd">#b8dc89</string>
+    <string name="fastMoveEven">#acd676</string>
+    <string name="specialMoveOdd">#80bfff</string>
+    <string name="specialMoveEven">#4da6ff</string>
 </resources>
