@@ -121,31 +121,37 @@ public class XMLParser {
         return pokemon;
     }
 
-    /**
-     *
-     * @return the values of all the resistances
-     */
-    public List<String> getResistanceValues(){
+    private List<String> getValues(String e){
         List<String> values = new ArrayList<>();
-        Element resistance = (Element) getPokemon().getElementsByTagName("resistance").item(0);
+        Element resistance = (Element) getPokemon().getElementsByTagName(e).item(0);
         NodeList childNodes = resistance.getElementsByTagName("item");
         for(int i = 0; i < childNodes.getLength(); i++) {
             values.add(getElementValue(childNodes.item(i)));
         }
         return values;
     }
+
     /**
      *
-     * @return the values of all the weaknesses
+     * @return the list of values of all the resistances
+     */
+    public List<String> getResistanceValues(){
+        return getValues("resistance");
+    }
+    /**
+     *
+     * @return the list of values of all the weaknesses
      */
     public List<String> getWeaknessValues(){
-        List<String> values = new ArrayList<>();
-        Element weakness = (Element) getPokemon().getElementsByTagName("weakness").item(0);
-        NodeList childNodes = weakness.getElementsByTagName("item");
-        for(int i = 0; i < childNodes.getLength(); i++) {
-            values.add(getElementValue(childNodes.item(i)));
-        }
-        return values;
+        return getValues("weakness");
+    }
+
+    /**
+     *
+     * @return the list of values of the ideal moveset
+     */
+    public List<String> getIdealMoveset(){
+        return getValues("idealmoveset");
     }
 
     public List<Skill> getMoves(String typeOfMoves){

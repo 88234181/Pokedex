@@ -488,6 +488,7 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/pokedexDetailIdealMoveset" />
+
     <LinearLayout
         android:id="@+id/pokedexDetailIdealMovesetLayout"
         android:layout_width="match_parent"
@@ -495,22 +496,7 @@
         android:orientation="horizontal"
         android:background="#b3b3ff"
         android:layout_below="@+id/pokedexDetailIdealMovesetDivier">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Vine Whip"
-            android:layout_marginStart="2dp"
-            android:textColor="@android:color/black"
-            android:drawableStart="@drawable/type_grass"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Power Whip"
-            android:layout_marginStart="2dp"
-            android:textColor="@android:color/black"
-            android:drawableStart="@drawable/type_grass"/>
+
     </LinearLayout>
     <!-- Ideal Moveset Layout divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
@@ -530,22 +516,13 @@
         android:layout_below="@+id/pokedexDetailIdealMovesetLayoutDivier"
         android:gravity="center">
         <TextView
-            android:id="@+id/pokedexDetailEvolutionName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:text="Baulbasaur"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:text=" Evolution"/>
+            android:text="Evolution Info"/>
     </LinearLayout>
     <!-- Evolution divider -->
     <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
@@ -586,15 +563,18 @@
             android:layout_width="match_parent"
             android:background="#9999ff">
             <TextView
+                android:id="@+id/pokedexDetailEvolveFrom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="-"
                 android:layout_marginStart="2dp"
+                android:textStyle="bold"
                 android:textColor="@android:color/black" />
             <TextView
+                android:id="@+id/pokedexDetailEvolveInto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ivysaur"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
                 android:textColor="@android:color/black" />
         </TableRow>
     </TableLayout>

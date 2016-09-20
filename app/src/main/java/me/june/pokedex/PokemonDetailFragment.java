@@ -92,11 +92,36 @@ public class PokemonDetailFragment extends Fragment{
         List<Skill> fastMoves = parser.getMoves("fastmoves");
         populateMoves(fastMovesLayout, fastMoves, getString(R.string.fastMoveOdd), getString(R.string.fastMoveEven));
 
+        // programmatically generate the special moves of the pokemon
         LinearLayout specialMovesLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailSpecialAttackLayout);
         List<Skill> specialMoves = parser.getMoves("specialmoves");
         populateMoves(specialMovesLayout, specialMoves, getString(R.string.specialMoveOdd), getString(R.string.specialMoveEven));
 
+        // programmatically generate the ideal moveset of the pokemon
+        LinearLayout idealMovesetLayout = (LinearLayout) fragmentLayout.findViewById(R.id.pokedexDetailIdealMovesetLayout);
+        List<String> idealMoveset = parser.getIdealMoveset();
+        populateIdealMoveset(idealMovesetLayout, idealMoveset);
+
+        // Evolution info
+        TextView evolvesFrom = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailEvolveFrom);
+        evolvesFrom.setText(parser.getValue(pokemon, "evolvesfrom"));
+        TextView evolvesInto = (TextView) fragmentLayout.findViewById(R.id.pokedexDetailEvolveInto);
+        evolvesInto.setText(parser.getValue(pokemon, "evolvesinto"));
+
         return fragmentLayout;
+    }
+
+    public void populateIdealMoveset(LinearLayout layout, List<String> values){
+        for(int i = 0; i < values.size(); i++){
+            TextView textView = new TextView(getActivity());
+            textView.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+            textView.setTextColor(Color.BLACK);
+            textView.setTypeface(null, Typeface.BOLD);
+            textView.setPadding(2,0,0,0);
+            textView.setText(values.get(i));
+            layout.addView(textView);
+        }
+
     }
 
     /**

@@ -73,5 +73,11 @@
                 <wstab>26.4</wstab>
             </move>
         </specialmoves>
+        <idealmoveset>
+            <item>Vine Whip</item>
+            <item>Power Whip</item>
+        </idealmoveset>
+        <evolvesfrom>-</evolvesfrom>
+        <evolvesinto>Ivysaur</evolvesinto>
     </pokemon>
 </pokedex>
