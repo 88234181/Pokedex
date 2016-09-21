@@ -10,599 +10,601 @@
     android:layout_height="wrap_content"
     android:id="@+id/pokemonDetail">
 
-    <!-- Id of the pokemon -->
-    <LinearLayout
-        android:id="@+id/pokedexDetailTitle"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="2dp"
-        android:background="#ff80e1">
-        <TextView
-            android:text="#"
-            android:layout_width="wrap_content"
+        <!-- Id of the pokemon -->
+        <LinearLayout
+            android:id="@+id/pokedexDetailTitle"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:gravity="center" />
-        <TextView
-            android:id="@+id/pokedexDetailId"
-            android:text="001"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold|italic"
-            android:gravity="center" />
+            android:paddingStart="2dp"
+            android:background="#ff80e1">
+            <TextView
+                android:text="#"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/pokedexDetailId"
+                android:text="001"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold|italic"
+                android:gravity="center" />
 
-        <!-- name of the pokemon -->
-        <TextView
-            android:id="@+id/pokedexDetailName"
-            android:text="Balbausal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold" />
+            <!-- name of the pokemon -->
+            <TextView
+                android:id="@+id/pokedexDetailName"
+                android:text="Balbausal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Info"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Info"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+        </LinearLayout>
 
 
 
-    <!-- title divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailTitleDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexDetailTitle" />
-
-    <LinearLayout
-        android:id="@+id/pokedexDetailStatlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f8edf5"
-        android:layout_below="@+id/pokedexDetailTitleDivider">
+        <!-- title divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailTitleDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexDetailTitle" />
 
         <LinearLayout
-            android:id="@+id/pokedexDetailTypeLayout"
-            android:layout_width="wrap_content"
+            android:id="@+id/pokedexDetailStatlayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/pokedexDetailTitleDivider"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="2dp">
-            <!-- type1 of pokemon -->
+            android:background="#f8edf5"
+            android:layout_below="@+id/pokedexDetailTitleDivider">
+
+            <LinearLayout
+                android:id="@+id/pokedexDetailTypeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/pokedexDetailTitleDivider"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="2dp">
+                <!-- type1 of pokemon -->
+                <ImageView
+                    android:id="@+id/pokedexDetailType1"
+                    android:contentDescription="Grass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp" />
+                <ImageView
+                    android:id="@+id/pokedexDetailType2"
+                    android:contentDescription="Poison"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"/>
+                <TextView
+                    android:id="@+id/pokedexDetailStamina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:drawableStart="@drawable/heart"/>
+                <TextView
+                    android:id="@+id/pokedexDetailAttack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="126"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:drawableStart="@drawable/sword"/>
+                <TextView
+                    android:id="@+id/pokedexDetailDefense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="126"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:drawableStart="@drawable/shield"/>
+                <TextView
+                    android:id="@+id/pokedexDetailCandyToEvolve"
+                    android:text="25"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:drawableLeft="@drawable/candy"/>
+            </LinearLayout>
+
+            <!-- image of the pokemon -->
             <ImageView
-                android:id="@+id/pokedexDetailType1"
-                android:contentDescription="Grass"
+                android:id="@+id/pokedexDetailImage"
+                android:src="@drawable/pokedex001"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_below="@+id/pokedexDetailTitleDivider"
+                android:layout_toEndOf="@+id/pokedexDetailTypeLayout"
+                />
+
+            <LinearLayout
+                android:id="@+id/pokedexDetailResistanceLayout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <ImageView
-                android:id="@+id/pokedexDetailType2"
-                android:contentDescription="Poison"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_below="@+id/pokedexDetailTitleDivider"
+                android:layout_toEndOf="@+id/pokedexDetailImage"
+                android:layout_alignBottom="@+id/pokedexDetailImage">
+                <TextView
+                    android:text="(x0.8)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/shield_reflect"
+                    android:layout_margin="2dp" />
+                <!--
+                <ImageView
+                    android:contentDescription="Water"
+                    android:src="@drawable/type_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp" />
+                    -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokedexDetailWeaknessLayout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"/>
-            <TextView
-                android:id="@+id/pokedexDetailStamina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="90"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:drawableStart="@drawable/heart"/>
-            <TextView
-                android:id="@+id/pokedexDetailAttack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="126"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:drawableStart="@drawable/sword"/>
-            <TextView
-                android:id="@+id/pokedexDetailDefense"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="126"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:drawableStart="@drawable/shield"/>
-            <TextView
-                android:id="@+id/pokedexDetailCandyToEvolve"
-                android:text="25"
-                android:textColor="@android:color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:drawableLeft="@drawable/candy"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_below="@+id/pokedexDetailTitleDivider"
+                android:layout_toEndOf="@+id/pokedexDetailResistanceLayout"
+                android:layout_alignBottom="@+id/pokedexDetailImage">
+                <TextView
+                    android:text="(x1.25)"
+                    android:drawableStart="@drawable/shield_broken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp" />
+                <!--
+                <ImageView
+                    android:contentDescription="Fire"
+                    android:src="@drawable/type_fire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp" />
+                    -->
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- image of the pokemon -->
-        <ImageView
-            android:id="@+id/pokedexDetailImage"
-            android:src="@drawable/pokedex001"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_below="@+id/pokedexDetailTitleDivider"
-            android:layout_toEndOf="@+id/pokedexDetailTypeLayout"
-            />
+        <!-- image divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailImageDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailStatlayout" />
 
-        <LinearLayout
-            android:id="@+id/pokedexDetailResistanceLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_below="@+id/pokedexDetailTitleDivider"
-            android:layout_toEndOf="@+id/pokedexDetailImage"
-            android:layout_alignBottom="@+id/pokedexDetailImage">
-            <TextView
-                android:text="(x0.8)"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/shield_reflect"
-                android:layout_margin="2dp" />
-            <!--
-            <ImageView
-                android:contentDescription="Water"
-                android:src="@drawable/type_water"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-                -->
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/pokedexDetailWeaknessLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_below="@+id/pokedexDetailTitleDivider"
-            android:layout_toEndOf="@+id/pokedexDetailResistanceLayout"
-            android:layout_alignBottom="@+id/pokedexDetailImage">
-            <TextView
-                android:text="(x1.25)"
-                android:drawableStart="@drawable/shield_broken"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-            <!--
-            <ImageView
-                android:contentDescription="Fire"
-                android:src="@drawable/type_fire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp" />
-                -->
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- image divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailImageDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailStatlayout" />
-
-    <TextView
-        android:id="@+id/pokedexdetailAbout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About"
-        android:background="#ff9900"
-        android:textSize="18sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:layout_below="@+id/pokedexDetailImageDivider"
-        android:gravity="center" />
-
-    <!-- About divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailAboutDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexdetailAbout" />
-
-    <TextView
-        android:id="@+id/pokedexDetailAboutDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffb84d"
-        android:text="description"
-        android:paddingStart="2dp"
-        android:layout_below="@+id/pokedexDetailAboutDivider"
-        android:textColor="@android:color/black" />
-
-    <!-- About description divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailAboutDescriptionDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailAboutDescription" />
-
-    <TextView
-        android:id="@+id/pokedexDetailFastAttack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fast Move(s)"
-        android:background="#92C94A"
-        android:textSize="18sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_below="@+id/pokedexDetailAboutDescriptionDivider" />
-
-    <!-- Fast Attack divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailFastAttackDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexDetailFastAttack" />
-
-    <LinearLayout
-        android:id="@+id/pokedexDetailFastAttackLayout"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pokedexDetailFastAttackDivier">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#b8dc89"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/type"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#acd676"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/power"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#b8dc89"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cooldown"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#acd676"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/energy"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#b8dc89"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dps"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#acd676"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/wstab"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#b8dc89"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Fast Attack layout divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailFastAttackLayoutDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailFastAttackLayout" />
-
-    <TextView
-        android:id="@+id/pokedexDetailSpecialAttack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Special Move(s)"
-        android:textSize="18sp"
-        android:background="#4da6ff"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_below="@+id/pokedexDetailFastAttackLayoutDivier" />
-
-    <!-- Specila Attack divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailSpecialAttackDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexDetailSpecialAttack" />
-
-    <LinearLayout
-        android:id="@+id/pokedexDetailSpecialAttackLayout"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pokedexDetailSpecialAttackDivier">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#80bfff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/type"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#4da6ff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/power"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#80bfff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cooldown"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#4da6ff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/energy"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#80bfff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dps"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#4da6ff"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/wstab"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:background="#80bfff"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Special Attack divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailSpecialAttackLayoutDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailSpecialAttackLayout" />
-
-    <TextView
-        android:id="@+id/pokedexDetailIdealMoveset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ideal Moveset"
-        android:background="#9999ff"
-        android:textSize="18sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_below="@+id/pokedexDetailSpecialAttackLayoutDivier" />
-
-    <!-- Ideal Moveset divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailIdealMovesetDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexDetailIdealMoveset" />
-
-    <LinearLayout
-        android:id="@+id/pokedexDetailIdealMovesetLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#b3b3ff"
-        android:layout_below="@+id/pokedexDetailIdealMovesetDivier">
-
-    </LinearLayout>
-    <!-- Ideal Moveset Layout divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailIdealMovesetLayoutDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailIdealMovesetLayout" />
-
-    <LinearLayout
-        android:id="@+id/pokedexDetailEvolution"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#6666ff"
-        android:layout_below="@+id/pokedexDetailIdealMovesetLayoutDivier"
-        android:gravity="center">
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/pokedexdetailAbout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:text="About"
+            android:background="#ff9900"
             android:textSize="18sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:text="Evolution Info"/>
-    </LinearLayout>
-    <!-- Evolution divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailEvolutionDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/pokedexDetailEvolution" />
-    <TableLayout
-        android:id="@+id/pokedexDetailEvolutionLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pokedexDetailEvolutionDivier"
-        android:shrinkColumns="*"
-        android:stretchColumns="*"
-        android:gravity="center">
-        <TableRow
-            android:layout_height="wrap_content"
+            android:layout_below="@+id/pokedexDetailImageDivider"
+            android:gravity="center" />
+
+        <!-- About divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailAboutDivider"
             android:layout_width="match_parent"
-            android:background="#b3b3ff">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Evolves From"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Evolves Into"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </TableRow>
-        <TableRow
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexdetailAbout" />
+
+        <TextView
+            android:id="@+id/pokedexDetailAboutDescription"
             android:layout_width="match_parent"
-            android:background="#9999ff">
-            <TextView
-                android:id="@+id/pokedexDetailEvolveFrom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:id="@+id/pokedexDetailEvolveInto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </TableRow>
-    </TableLayout>
-    <!-- Evolution divider -->
-    <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <View
-        android:id="@+id/pokedexDetailEvolutionLayoutDivier"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_below="@+id/pokedexDetailEvolutionLayout" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/pokedexDetailEvolutionLayoutDivier">
-        <Button
-            android:id="@+id/pokedexDetailPreviousButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Previous Pokemon"/>
-        <Button
-            android:id="@+id/pokedexDetailNextButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:background="#ffb84d"
+            android:text="description"
+            android:paddingStart="2dp"
+            android:layout_below="@+id/pokedexDetailAboutDivider"
+            android:textColor="@android:color/black" />
+
+        <!-- About description divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailAboutDescriptionDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailAboutDescription" />
+
+        <TextView
+            android:id="@+id/pokedexDetailFastAttack"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next Pokemon" />
-    </LinearLayout>
+            android:text="Fast Move(s)"
+            android:background="#92C94A"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_below="@+id/pokedexDetailAboutDescriptionDivider" />
+
+        <!-- Fast Attack divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailFastAttackDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexDetailFastAttack" />
+
+        <LinearLayout
+            android:id="@+id/pokedexDetailFastAttackLayout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pokedexDetailFastAttackDivier">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#b8dc89"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#acd676"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/power"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#b8dc89"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cooldown"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#acd676"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/energy"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#b8dc89"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dps"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#acd676"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wstab"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#b8dc89"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Fast Attack layout divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailFastAttackLayoutDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailFastAttackLayout" />
+
+        <TextView
+            android:id="@+id/pokedexDetailSpecialAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Special Move(s)"
+            android:textSize="18sp"
+            android:background="#4da6ff"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_below="@+id/pokedexDetailFastAttackLayoutDivier" />
+
+        <!-- Specila Attack divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailSpecialAttackDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexDetailSpecialAttack" />
+
+        <LinearLayout
+            android:id="@+id/pokedexDetailSpecialAttackLayout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pokedexDetailSpecialAttackDivier">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#80bfff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#4da6ff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/power"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#80bfff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cooldown"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#4da6ff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/energy"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#80bfff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dps"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#4da6ff"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wstab"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="#80bfff"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Special Attack divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailSpecialAttackLayoutDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailSpecialAttackLayout" />
+
+        <TextView
+            android:id="@+id/pokedexDetailIdealMoveset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ideal Moveset"
+            android:background="#9999ff"
+            android:textSize="18sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_below="@+id/pokedexDetailSpecialAttackLayoutDivier" />
+
+        <!-- Ideal Moveset divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailIdealMovesetDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexDetailIdealMoveset" />
+
+        <LinearLayout
+            android:id="@+id/pokedexDetailIdealMovesetLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#b3b3ff"
+            android:layout_below="@+id/pokedexDetailIdealMovesetDivier">
+
+        </LinearLayout>
+        <!-- Ideal Moveset Layout divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailIdealMovesetLayoutDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailIdealMovesetLayout" />
+
+        <LinearLayout
+            android:id="@+id/pokedexDetailEvolution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#6666ff"
+            android:layout_below="@+id/pokedexDetailIdealMovesetLayoutDivier"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:text="Evolution Info"/>
+        </LinearLayout>
+        <!-- Evolution divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+        <View
+            android:id="@+id/pokedexDetailEvolutionDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/pokedexDetailEvolution" />
+        <TableLayout
+            android:id="@+id/pokedexDetailEvolutionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pokedexDetailEvolutionDivier"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            android:gravity="center">
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="#b3b3ff">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evolves From"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@android:color/black" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evolves Into"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="#9999ff">
+                <TextView
+                    android:id="@+id/pokedexDetailEvolveFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+                <TextView
+                    android:id="@+id/pokedexDetailEvolveInto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+        </TableLayout>
+        <!-- Evolution divider -->
+        <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+            <!--
+        <View
+            android:id="@+id/pokedexDetailEvolutionLayoutDivier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@+id/pokedexDetailEvolutionLayout" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/pokedexDetailEvolutionLayoutDivier">
+            <Button
+                android:id="@+id/pokedexDetailPreviousButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Previous Pokemon"/>
+            <Button
+                android:id="@+id/pokedexDetailNextButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Next Pokemon" />
+        </LinearLayout>
+        -->
     </RelativeLayout>
 </ScrollView>

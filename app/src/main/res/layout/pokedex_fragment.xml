@@ -5,9 +5,17 @@
     android:id="@+id/mainActivityLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="me.june.pokedex.MainActivity"
     tools:showIn="@layout/activity_main">
+
+    <!-- Editext for Search -->
+    <EditText android:id="@+id/pokedexSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search products.."
+        android:inputType="textVisiblePassword"/>
 
     <fragment
         android:id="@+id/mainActivityFrag"

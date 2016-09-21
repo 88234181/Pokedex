@@ -3,7 +3,10 @@ package me.june.pokedex;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import org.w3c.dom.Document;
@@ -17,13 +20,12 @@ import java.util.ArrayList;
  */
 public class PokedexFragment extends ListFragment {
 
-    private ArrayList<Pokemon> pokedex;
-    private PokemonAdapter pokemonAdapter;
+    ArrayList<Pokemon> pokedex;
+    PokemonAdapter pokemonAdapter;
+    EditText pokedexSearch;
 
     private static final String POKEMON_ID = "POKEMON ID";
     private static final String POKEMON_NAME = "POKEMON NAME";
-    private static final String POKEMON_TYPE1 = "POKEMON TYPE1";
-    private static final String POKEMON_TYPE2 = "POKEMON TYPE2";
 
     public PokedexFragment(){
 
@@ -38,6 +40,7 @@ public class PokedexFragment extends ListFragment {
 
         NodeList pokemons = doc.getElementsByTagName("pokemon");
         pokedex = new ArrayList<>();
+        pokedexSearch = (EditText) getActivity().findViewById(R.id.pokedexSearch);
 
         for(int i = 0; i < pokemons.getLength(); i++){
             Element e = (Element) pokemons.item(i);
@@ -51,6 +54,23 @@ public class PokedexFragment extends ListFragment {
         pokemonAdapter = new PokemonAdapter(getActivity(), pokedex);
 
         setListAdapter(pokemonAdapter);
+
+        pokedexSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                PokedexFragment.this.pokemonAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
