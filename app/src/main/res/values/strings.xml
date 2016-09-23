@@ -16,4 +16,25 @@
     <string name="fastMoveEven">#acd676</string>
     <string name="specialMoveOdd">#80bfff</string>
     <string name="specialMoveEven">#4da6ff</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="filter_bug">Bug</string>
+    <string name="filter_dark">Dark</string>
+    <string name="filter_dragon">Dragon</string>
+    <string name="filter_electric">Electric</string>
+    <string name="filter_fairy">Fairy</string>
+    <string name="filter_fighting">Fighting</string>
+    <string name="filter_fire">Fire</string>
+    <string name="filter_flying">Flying</string>
+    <string name="filter_ghost">Ghost</string>
+    <string name="filter_grass">Grass</string>
+    <string name="filter_ground">Ground</string>
+    <string name="filter_ice">Ice</string>
+    <string name="filter_normal">Normal</string>
+    <string name="filter_poison">Poison</string>
+    <string name="filter_psychic">Psychic</string>
+    <string name="filter_rock">Rock</string>
+    <string name="filter_steel">Steel</string>
+    <string name="filter_water">Water</string>
+
 </resources>
